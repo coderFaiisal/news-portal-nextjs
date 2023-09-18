@@ -32,7 +32,7 @@ const RootLayout = ({ children }) => {
                 borderRadius: "3px",
               }}
             >
-              PH_NEWS PORTAL
+              NEWS PORTAL
             </Link>
           </h1>
         </div>
@@ -82,7 +82,7 @@ const RootLayout = ({ children }) => {
             fontSize: "28px",
           }}
         >
-          PH-NEWS PORTAL
+          NEWS PORTAL
         </h2>
         <p className={styles.social_icons}>
           <Link href="https://web.facebook.com/groups/programmingherocommunity">

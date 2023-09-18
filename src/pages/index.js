@@ -7,7 +7,7 @@ const HomePage = () => {
   return (
     <>
       <Head>
-        <title>PH-News Portal</title>
+        <title>News Portal</title>
         <meta
           name="description"
           content="This is news portal of programming hero made by next-js"
