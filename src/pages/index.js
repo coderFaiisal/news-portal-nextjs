@@ -2,8 +2,12 @@ import Head from "next/head";
 import RootLayout from "@/components/Layouts/RootLayout";
 import Banner from "@/components/UI/Banner";
 import AllNews from "@/components/UI/AllNews";
+import { useGetAllNewsQuery } from "@/redux/api/apiSlice";
 
-const HomePage = ({ allNews }) => {
+const HomePage = () => {
+  const { data } = useGetAllNewsQuery();
+  console.log(data);
+
   return (
     <>
       <Head>
@@ -16,7 +20,7 @@ const HomePage = ({ allNews }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Banner />
-      <AllNews allNews={allNews} />
+      <AllNews allNews={data} />
     </>
   );
 };
@@ -24,16 +28,4 @@ export default HomePage;
 
 HomePage.getLayout = function getLayout(page) {
   return <RootLayout>{page}</RootLayout>;
-};
-
-export const getServerSideProps = async () => {
-  const res = await fetch("http://localhost:5000/news");
-  const data = await res.json();
-
-  return {
-    props: {
-      allNews: data,
-    },
-    revalidate: 10,
-  };
 };
